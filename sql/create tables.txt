@@ -1,0 +1,16 @@
+create table MONTHS (id smallInt,name varchar2(10))
+create table YEARS (id smallInt, start_date date, end_date date);
+
+create table TEAMS (id int, name varchar2(100));
+create table KPI_TYPES(id int, name varchar2(100));
+create table MN_TEAMS_KPI_TYPES(id int, team_id int, kpi_type_id int);
+
+create table TEAM_KPIS(id int, kpi_type_id int, team_id int, month_id int, year_id int, value float);
+
+
+select month.name, kpis.value
+from kpis 
+inner join teams 
+on teams.id = kpis.team_id 
+inner join month 
+on kpis.month_id = month.id;

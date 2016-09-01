@@ -1,0 +1,18 @@
+@CHARSET "ISO-8859-1";
+.input-text-secondary
+{
+	margin:0xp;
+	padding:10px;
+	font-size:16px;
+	border : 1px solid lightgray;
+}
+.input-text-secondary:active
+{
+	outline:none;
+	border-color:red;
+}
+.input-text-secondary:focus
+{
+	border-color:red;
+	outline:none;
+}

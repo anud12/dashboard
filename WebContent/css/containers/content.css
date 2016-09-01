@@ -1,0 +1,10 @@
+.content
+{
+	margin : 45px 0px 0px 150px;
+	padding :0px 20px 0px 20px;
+}
+.content .chart
+{
+	min-height:300px;
+	min-width:300px;
+}

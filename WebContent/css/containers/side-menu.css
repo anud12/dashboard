@@ -1,0 +1,22 @@
+.side-menu
+{
+	position:fixed;
+	top:0px;
+	width:150px;
+	height: calc(100% - 45px);
+}
+.side-menu > button
+{
+	width:100%;
+	margin:0px 0px -1px 0px;
+	border-width: 1px 1px 1px 0px;
+}
+
+.side-menu > button:first-of-type
+{
+	border-width:1px 1px 1px 0px;
+}
+.side-menu > button:nth-child(2)
+{
+	margin:0px 0px -2px 0px;
+}

@@ -1,0 +1,19 @@
+.header 
+{
+    position: absolute;
+    top: 0px;
+	padding: 0px 0px 0px 170px;
+    color: white;
+    background-color: red;
+    width: calc(100% - 170px);
+    overflow: hidden;
+}
+.header .current
+{
+	background-color:white;
+	color:black;
+}
+.header > *
+{
+	float:left;
+}

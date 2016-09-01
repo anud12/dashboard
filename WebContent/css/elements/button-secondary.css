@@ -1,0 +1,29 @@
+@CHARSET "ISO-8859-1";
+.button-secondary
+{
+	position:relative;
+	background-color:white;
+	text-color: black;
+	border:1px solid lightgray;
+	font-size:15px;
+	padding:12px;
+	transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+.button-secondary:hover
+{
+	border-color:red;
+	z-index:100;
+}
+.button-secondary:focus
+{
+	border-color:red;
+	outline: none;
+	z-index:100;
+}
+.button-secondary:active
+{
+	border-color:red;
+	color:red;
+	outline: none;
+	z-index:100;
+}
