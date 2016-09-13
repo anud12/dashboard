@@ -28,6 +28,15 @@ public class Div implements DomData
 		properties = new LinkedList<>();
 		id = DomIDFactory.getID(this);
 	}
+	public Div(DomData dom)
+	{
+		data = new ArrayList<>();
+		cssClases = new LinkedList<CSSClass>();
+		clases = new LinkedList<>();
+		properties = new LinkedList<>();
+		id = DomIDFactory.getID(this);
+		this.addDom(dom);
+	}
 	
 	public void addDom(DomData dom)
 	{

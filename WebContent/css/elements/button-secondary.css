@@ -7,6 +7,7 @@
 	border:1px solid lightgray;
 	font-size:15px;
 	padding:12px;
+	cursor:pointer;
 	transition: border-color 0.2s, color 0.2s, background-color 0.2s;
 }
 .button-secondary:hover
@@ -17,13 +18,16 @@
 .button-secondary:focus
 {
 	border-color:red;
+	background-color:red;
+	color:white;
 	outline: none;
 	z-index:100;
 }
 .button-secondary:active
 {
 	border-color:red;
-	color:red;
+	background-color:red;
+	color:white;
 	outline: none;
 	z-index:100;
 }

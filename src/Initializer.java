@@ -4,7 +4,6 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import dashboard.db.DBLibrary;
 import dashboard.library.css.CSSLibrary;
 import dashboard.library.javascript.JSLibrary;
 
@@ -38,7 +37,6 @@ public class Initializer implements ServletContextListener {
     {
     	//Init here
     	CSSLibrary.initialize();
-    	DBLibrary.initialize();
     	JSLibrary.initialize();
     }
 	

@@ -2,15 +2,29 @@ create table MONTHS (id smallInt,name varchar2(10))
 create table YEARS (id smallInt, start_date date, end_date date);
 
 create table TEAMS (id int, name varchar2(100));
-create table KPI_TYPES(id int, name varchar2(100));
-create table MN_TEAMS_KPI_TYPES(id int, team_id int, kpi_type_id int);
-
-create table TEAM_KPIS(id int, kpi_type_id int, team_id int, month_id int, year_id int, value float);
+create table KPI_TYPES(id int, name varchar2(100), amber float, red float, team_id int);
 
 
 select month.name, kpis.value
-from kpis 
-inner join teams 
-on teams.id = kpis.team_id 
-inner join month 
+from kpis
+inner join teams
+on teams.id = kpis.team_id
+inner join month
 on kpis.month_id = month.id;
+
+
+insert into kpi_types values (	1	,	'	Number of Incidents 	'	,	0	,	0	,	0	);
+insert into kpi_types values (	2	,	'	Number of P1 Incidents 	'	,	0	,	90	,	0	);
+insert into kpi_types values (	3	,	'	Number of P2 Incidents 	'	,	0	,	90	,	0	);
+insert into kpi_types values (	4	,	'	Number of P3 Incidents 	'	,	0	,	90	,	0	);
+insert into kpi_types values (	5	,	'	Number of P4 Incidents 	'	,	0	,	90	,	0	);
+insert into kpi_types values (	6	,	'	Number of Service Requests	'	,	0	,	0	,	0	);
+insert into kpi_types values (	7	,	'	Number of alerts	'	,	0	,	0	,	0	);
+insert into kpi_types values (	8	,	'	Number of Change Requests	'	,	0	,	0	,	0	);
+insert into kpi_types values (	9	,	'	SLA Adherence for Incidents	'	,	85	,	93	,	0	);
+insert into kpi_types values (	10	,	'	SLA Adherence for P1 Incidents	'	,	85	,	90	,	0	);
+insert into kpi_types values (	11	,	'	SLA Adherence for P2 Incidents	'	,	85	,	90	,	0	);
+insert into kpi_types values (	12	,	'	SLA Adherence for P3 Incidents	'	,	85	,	90	,	0	);
+insert into kpi_types values (	13	,	'	SLA Adherence for P4 Incidents	'	,	85	,	90	,	0	);
+insert into kpi_types values (	14	,	'	SLA Adherence for Service Requests	'	,	85	,	93	,	0	);
+

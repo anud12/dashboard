@@ -20,14 +20,25 @@ public  abstract  class CSSLibrary
 	}
 	public static CSSSelector getSelector()
 	{
-		return new CSSSelector();
+		CSSSelector selector = new CSSSelector();
+		try 
+		{
+			selector.setResourceClass("open-sans-font");
+			selector.setResourceClass("body");
+		} 
+		catch (CSSClassNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return selector;
 	}
 	
 	static public void initialize()
 	{	
 		addCSSClass(new CSSClass("button-secondary", "css/elements/"));
 		addCSSClass(new CSSClass("button-primary", "css/elements/"));
-		addCSSClass(new CSSClass("input-text-secondary", "css/elements/"));
+		addCSSClass(new CSSClass("form", "css/elements/"));
 		addCSSClass(new CSSClass("table", "css/elements/"));
 		
 		addCSSClass(new CSSClass("text", "css/"));
@@ -37,6 +48,9 @@ public  abstract  class CSSLibrary
 		addCSSClass(new CSSClass("content", "css/containers/"));
 		addCSSClass(new CSSClass("side-menu", "css/containers/"));
 		addCSSClass(new CSSClass("card", "css/containers/"));
+		
+		addCSSClass(new CSSClass("body", "css/defaults/"));
+		addCSSClass(new CSSClass("open-sans-font", "css/defaults/"));
 		
 	}
 }

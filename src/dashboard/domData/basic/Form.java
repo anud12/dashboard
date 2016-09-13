@@ -16,17 +16,24 @@ public class Form implements DomData
 	protected List<CSSClass> cssClases;
 	protected List<String> clases;
 	protected List<Method> properties;
+	protected String method;
 	protected String id;
+	protected String destination;
 	
-	public Form()
+	public Form(String method, String destination)
 	{
+		this.method = method;
 		data = new LinkedList<>();
 		cssClases = new LinkedList<>();
 		clases = new LinkedList<>();
 		properties = new LinkedList<>();
 		id = DomIDFactory.getID(this);
+		this.destination = destination;
 	}
-	
+	public String getMethod()
+	{
+		return method;
+	}
 	public void addDom(DomData dom)
 	{
 		data.add(dom);
@@ -80,6 +87,14 @@ public class Form implements DomData
 	{
 		return properties;
 	}
+	public String getDestination() 
+	{
+		return destination;
+	}
+	public void setDestination(String destination) 
+	{
+		this.destination = destination;
+	}
 	public List<DomData> getDomsRecursive()
 	{
 		List<DomData> data = new LinkedList<DomData>();
@@ -97,5 +112,7 @@ public class Form implements DomData
 		}
 		return data;
 	}
+	
+	
 	
 }

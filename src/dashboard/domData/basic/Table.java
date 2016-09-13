@@ -5,6 +5,7 @@ import java.util.List;
 import dashboard.domData.DomData;
 import dashboard.domData.DomIDFactory;
 import dashboard.domParsers.TableParser;
+import dashboard.domParsers.TiltedTableParser;
 import dashboard.library.css.CSSClass;
 import dashboard.library.javascript.Method;
 
@@ -21,6 +22,7 @@ public class Table implements DomData
 	protected List<String> clases;
 	protected List<Method> properties;
 	protected String id;
+	protected boolean tilted;
 	
 	public Table()
 	{
@@ -31,6 +33,18 @@ public class Table implements DomData
 		header = new TableRowHeader();
 		properties = new LinkedList<>();
 		id = DomIDFactory.getID(this);
+		tilted = false;
+	}
+	public Table(boolean tilted)
+	{
+		data = new ArrayList<>();
+		rows = new ArrayList<>();
+		cssClases = new LinkedList<>();
+		clases = new LinkedList<>();
+		header = new TableRowHeader();
+		properties = new LinkedList<>();
+		id = DomIDFactory.getID(this);
+		this.tilted = tilted;
 	}
 	public List<TableRow> getRows()
 	{
@@ -96,6 +110,10 @@ public class Table implements DomData
 	@Override
 	public String parseHTML() 
 	{
+		if(tilted)
+		{
+			return TiltedTableParser.parse(this);
+		}
 		return TableParser.parse (this);
 	}
 	@Override
@@ -112,6 +130,15 @@ public class Table implements DomData
 	public List<DomData> getDoms() 
 	{
 		return data;
+	}
+	
+	public boolean isTilted() 
+	{
+		return tilted;
+	}
+	public void setTilted(boolean tilted) 
+	{
+		this.tilted = tilted;
 	}
 	public List<DomData> getDomsRecursive()
 	{

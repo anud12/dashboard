@@ -16,6 +16,12 @@ public class FormParser
 		builder.append("id='");
 		builder.append(form.getId());
 		builder.append("' ");
+		builder.append("method='");
+		builder.append(form.getMethod());
+		builder.append("' ");
+		builder.append("action='");
+		builder.append(form.getDestination());
+		builder.append("' ");
 		builder.append("class='");
 		
 		Iterator<CSSClass> iteratorCSS = form.getCSSClases().iterator();

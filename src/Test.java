@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import dashboard.pages.CardDiv;
 import dashboard.pages.TablePage;
-import dashboard.db.DBLibrary;
 import dashboard.domData.DomData;
 import dashboard.domData.basic.Div;
 import dashboard.domData.basic.Table;
@@ -52,108 +51,16 @@ public class Test extends HttpServlet
     	{
 	    	page = new TablePage("page");
 	    	
-	    	Div text = new Div();
-			text.addDom( new Text("Employers"));
-			text.addCSSClass(CSSLibrary.getSelector().getResourceClass("title"));
-			page.addDom(text);
-			
-			
-			text = new Div();
-			text.addDom( new Text("Use the for general-purpose access to your database. Useful when you are using static SQL statements at runtime. The Statement interface cannot accept parameters."));
-			text.addCSSClass(CSSLibrary.getSelector().getResourceClass("text"));
-			page.addDom(text);
-			
-			
-			tableChart = DBLibrary.getElement("MONTH").getTable();
-			tableChart.addCSSClass(CSSLibrary.getSelector().getResourceClass("table"));
-			page.addDom(tableChart);
-			
-			PieChart property2 = (PieChart) JSLibrary.getJSClass("PieChart");
-			tableChart.addJSProperty(property2.generateCall("Titlu", tableChart, text, 1, 1));
-			
-			
-			Div div = new Div();
-			
-			div.addDom(new Text("Title text"));
-			
-			Div card = new CardDiv(div);
-
-			div  = new Div();
-			div.addDom(new Text("Lorem ipsum"));
-			card.addDom(div);
-			
-			Table testTable = DBLibrary.getElement("MONTH").getTable();
-			testTable.addCSSClass(CSSLibrary.getCSSClass("table"));
-			card.addDom(testTable);
-			
-			StepChart property = (StepChart) JSLibrary.getJSClass("StepChart");
-			System.out.println(property);
-			tableChart.addJSProperty(property.generateCall("Titlu", tableChart, tableChart, 1, 1));
-			
-			div = new Div();
-			div.addDom(new Text("Something end text"));
-			card.addDom(div);
-			
-			page.addDom(card);
-			
-			card = new CardDiv(div);
-			card.addDom(new Div());
-			page.addDom(card);
-			page.addDom(card);
-			
+	    	/*
 			Table table;
 			
 			table = DBLibrary.getElement("YEAR").getTable();
 			table.addCSSClass(CSSLibrary.getSelector().getResourceClass("table"));
 			page.addDom(table);
-						
-			table = DBLibrary.getElement("KPIS").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getResourceClass("table"));
-			page.addDom(table);
-			
-			
-			/*
-			table = DBLibrary.getElement("DBA_ORCL_SOUTH_L1_QTY").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("DBA_ORCL_CENTRAL_QTY").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("DBA_ORCL_ARCOR").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("DBA_SYSBASE_MSSQL_SOUTH").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("QUALITY_ASSURANCE").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("STORAGE_PERFORMANCE").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("STORAGE_INFRS_BUILD").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("STORAGE_BLOCK").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("STORAGE_IP").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("STORAGE_PROTECTION").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
-			table = DBLibrary.getElement("SERVICE_DESIGN_OPERAITIONS").getTable();
-			table.addCSSClass(CSSLibrary.getSelector().getCSSClass("table"));
-			page.addDomData(table);
 			*/
-			text = new Div();
-			text.addDom( new Text("Increment value"));
-			incrementValue = new Text();
-			text.addDom(incrementValue);
-			text.addCSSClass(CSSLibrary.getSelector().getResourceClass("table"));
-			text.addClass("increment-value");
-			page.addDom(text);
+	    	Div div = new Div();
+	    	//div.addCSSClass(CSSLibrary.getCSSClass("something"));
+	    	page.addDom(div);
 		} 
     	catch (Exception e) 
     	{
@@ -174,7 +81,6 @@ public class Test extends HttpServlet
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		incrementValue.setText(Increment.value);
 		CSSSelector selectorCSS = CSSLibrary.getSelector();
 		
 		Iterator<DomData> iteratorCSS = page.getDomsRecursive().iterator();

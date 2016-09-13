@@ -21,16 +21,11 @@ public class Input implements DomData
 	protected List<Method> properties;
 	protected String id;
 	
-	public Input()
-	{
-		data = new ArrayList<>();
-		cssClases = new LinkedList<>();
-	}
 	public Input (String type, String name)
 	{
-		data = new ArrayList<>();
 		this.type = type;
 		this.name = name;
+		data = new ArrayList<>();
 		cssClases = new LinkedList<>();
 		clases = new LinkedList<>();
 		properties = new LinkedList<>();

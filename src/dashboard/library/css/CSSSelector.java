@@ -72,7 +72,7 @@ public class CSSSelector implements Selector<CSSClass>
 		while(literator.hasNext())
 		{
 			CSSClass cClass = literator.next();
-			builder.append("<link rel='stylesheet' href='");
+			builder.append("<link rel='stylesheet' href='/dashboard/");
 			builder.append(cClass.getPath());
 			builder.append(cClass.getClassName());
 			builder.append(".css'");
